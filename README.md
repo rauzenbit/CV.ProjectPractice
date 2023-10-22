@@ -34,6 +34,10 @@
 Затем эту модель уже компьютер подгоняет под истинный спектр. Для этого выделяем ту область на спектре (см. ячейку 4), где полосы есть.
 
 <table><tr>
-<td> <img src="model_cal334.png" alt="Подобранная модель" style="width: 500px;"/> </td>
-<td> <img src="optimized_model_cal334.png" alt="Оптимизорованная модель" style="width: 500px;"/> </td>
+<td>Подобранная <img src="model_cal334.png" alt="Drawing" style="width: 500px;"/> </td>
+<td>Оптимизированная <img src="optimized_model_cal334.png" alt="Drawing" style="width: 500px;"/> </td>
 </tr></table>
+
+Последним этапом работы была конкатенация оптимизированной модели и итогового спектра мощности  с последующим визуальным сравнением.
+
+<image src="/concatenated_model_and_reality_cal334.png">
