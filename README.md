@@ -1,6 +1,6 @@
-# Студенческая практика после 2го курса: спекл-интерферометрия
+# Student internship after the 2nd year: speckle interferometry.
 
-## Ячейка 1: вычисление master-bias
+## Cell 1: master-bias calculation
 
 In CMOS detectors, a certain constant value is added to the signal, which is called the bias.
 This value is fairly stable, but it still depends on the position on the detector and on time.
@@ -9,7 +9,7 @@ From the entire set of frames, a pixel-by-pixel median is calculated. This resul
 
 <image src="/master_bias.png">
 
-## Ячейка 2: получение спектра мощности изображения
+## Cell 2: obtaining the image power spectrum.
 
 To begin with, the master bias is subtracted from the raw telescope frame.
 Next, the region containing the target object is cropped.
@@ -20,22 +20,22 @@ To obtain the image power spectrum, a Fourier transform was applied to each fram
 
 <image src="/log_powerspectrum_cal334.png">
 
-## Ячейка 3 и 4: редукция сторонник эффектов
+## Cells 3 and 4: side effects reduction
 
 A circular mask is applied to the power spectrum here. The principle of its application is as follows: outside this mask, there should be no signal, but there is.
 It is also necessary to perform azimuthal averaging: a blank 100 × 100 frame was created and, by rotating the power spectrum by 1°, it was accumulated into this blank frame. Then, the resulting frame was divided by 360.
 
 <image src="/masked_powerspectrum_cal334.png">
 
-## Ячейка 5 и 6: подбор и улучшение модели
+## Cells 5 and 6: model selection and refinement.
 
 The resulting power spectrum is approximated by a certain model function.
 The initial model is selected manually and looks like a set of parallel, alternating light and dark stripes (see cell 5).
 Then this model is fitted to the true spectrum by the computer. To do this, the region of the spectrum is selected (see cell 4) where the stripes are present.
 
 <table><tr>
-<td>Подобранная <img src="model_cal334.png" alt="Drawing" style="width: 500px;"/> </td>
-<td>Оптимизированная <img src="optimized_model_cal334.png" alt="Drawing" style="width: 500px;"/> </td>
+<td>Selected <img src="model_cal334.png" alt="Drawing" style="width: 500px;"/> </td>
+<td>Optimized <img src="optimized_model_cal334.png" alt="Drawing" style="width: 500px;"/> </td>
 </tr></table>
 
 The final stage of the work was the concatenation of the optimized model and the resulting power spectrum, followed by visual comparison.
